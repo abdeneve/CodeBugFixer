@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmação de pagamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1>Confirmação de pagamento</h1>
+    <p>Pagamento de R$ {{ amount }} realizado com sucesso para o <mark>{{ plan }}</mark> do Code Bug Fixer.</p>
+    <footer class="card_footer"><a href="/">Ir para a página principal</a></footer>
+</body>
+
+</html>

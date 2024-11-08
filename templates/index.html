@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Bug Fixer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- <script src="../static/js/script.js"></script> -->
+</head>
+
+<body>
+    <div class="header">
+        <h1>Code Bug Fixer</h1>
+        <p>Corrige com IA erros de código e explica o que foi feito!</p>
+    </div>
+    <form action="/" method="post">
+        <div class="container">
+            <div class="column-main">
+                <textarea name="code" placeholder="Insira o código"></textarea>
+                <textarea name="error" placeholder="Insira o erro"></textarea>
+                <button class="submit-button" type="submit">Corrigir Código</button>
+                <textarea class="fixed-code" name="fixed-code" placeholder="Código Corrigido"readonly>{{ fixed_code }}</textarea>
+                <textarea class="explanation" name="explanation" placeholder="Explicação"readonly>{{ explanation }}</textarea>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

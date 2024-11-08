@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Opções de pagamento</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">Plano Mensal</p>
+                            <p class="subtitle">R$ 49 por mês</p>
+                            <p class="description">Este plano lhe dará acesso ilimitado
+                                aos serviços de explicação e correção de código mensalmente.
+                                Você será cobrado(a) R$ 49 mensalmente.</p>
+                        </div>
+                        <footer class="card_footer">
+                            <form action="/charge" method="post" class="form-action-pay">
+                                <input type="hidden" name="plan" value="Plano Mensal">
+                                <input type="hidden" name="amount" value="49">
+                                <script
+                                    src="https://checkout.stripe.com/checkout.js"
+                                    class="stripe-button"
+                                    data-key="pk_test_51QFnsz04p264B1qPGUyRhcxRDKATqAP8ccQCgMbPp7hDko0HbUHuraSYK0XOwezsZWWBuTbHthI7OE0PrckZfTiU00qtDV9isO"
+                                    data-amount="4900"
+                                    data-name="Plano Mensal"
+                                    data-description="R$ 49 por mês"
+                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                    data-locale="auto"
+                                    data-label="Pagar"
+                                    data-currency="brl"
+                                    data-zip-code="false">
+                                </script>
+                            </form>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">Plano Trimestral</p>
+                            <p class="subtitle">R$ 139 por trimestre</p>
+                            <ul>
+                                <li class="description">
+                                    Este plano lhe dará acesso ilimitado
+                                    aos serviços de explicação e correção de código a cada trimestre.
+                                    Você será cobrado(a) R$ 139 a cada trimestre.
+                                </li>
+                                <li class="description">Desconto de 5% aplicado</li>
+                            </ul>
+                        </div>
+                        <footer class="card_footer">
+                            <form action="/charge" method="post" class="form-action-pay">
+                                <input type="hidden" name="plan" value="Plano Trimestral">
+                                <input type="hidden" name="amount" value="139">
+                                <script
+                                    src="https://checkout.stripe.com/checkout.js"
+                                    class="stripe-button"
+                                    data-key="pk_test_51QFnsz04p264B1qPGUyRhcxRDKATqAP8ccQCgMbPp7hDko0HbUHuraSYK0XOwezsZWWBuTbHthI7OE0PrckZfTiU00qtDV9isO"
+                                    data-amount="13900"
+                                    data-name="Plano Trimestral"
+                                    data-description="R$ 139 por trimestre"
+                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                    data-locale="auto"
+                                    data-label="Pagar"
+                                    data-currency="brl"
+                                    data-zip-code="false">
+                                </script>
+                            </form>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">Plano Anual</p>
+                            <p class="subtitle">R$ 499 por ano</p>
+                            <ul>
+                                <li class="description">
+                                    Este plano lhe dará acesso ilimitado
+                                    aos serviços de explicação e correção de código todos os anos.
+                                    Você será cobrado(a) R$ 499 por ano.
+                                </li>
+                                <li class="description">Desconto de 15% aplicado</li>
+                                <li class="description">Suporte prioritário</li>
+                            </ul>
+                        </div>
+                        <footer class="card_footer">
+                            <form action="/charge" method="post" class="form-action-pay">
+                                <input type="hidden" name="plan" value="Plano Anual">
+                                <input type="hidden" name="amount" value="499">
+                                <script
+                                    src="https://checkout.stripe.com/checkout.js"
+                                    class="stripe-button"
+                                    data-key="pk_test_51QFnsz04p264B1qPGUyRhcxRDKATqAP8ccQCgMbPp7hDko0HbUHuraSYK0XOwezsZWWBuTbHthI7OE0PrckZfTiU00qtDV9isO"
+                                    data-amount="49900"
+                                    data-name="Plano Anual"
+                                    data-description="R$ 41,58 por mês"
+                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                    data-locale="auto"
+                                    data-label="Pagar"
+                                    data-currency="brl"
+                                    data-zip-code="false">
+                                </script>
+                            </form>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
